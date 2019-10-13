@@ -13,6 +13,13 @@ namespace tests
         [Theory, AutoData]
         public void FullNameValidTest(Customer sut)
         {
+            var test = new Customer(5) {
+                EmailAddress = "test"
+            };
+
+        
+            Assert.Equal(5, test.CustomerId);
+            Assert.Equal("test", test.EmailAddress);
             Assert.Equal($"{sut.LastName}, {sut.FirstName}", sut.FullName);
         }
 
